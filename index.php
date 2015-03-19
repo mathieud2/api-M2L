@@ -39,7 +39,7 @@ $app->get('/exemples/:id', function($id) use ($app) {
         }
 
     } catch (Exception $e) {
-        $app->response()->status('404');
+        $app->response()->status(404);
         $app->response()->header('X-Status-Reason', $e->getMessage());
     };
 
@@ -68,6 +68,28 @@ $app->post('/exemples', function() use ($app) {
         $app->response()->header('X-Status-Reason', $e->getMessage());
     }
 
+});
+
+
+$app->group('/formation', function() use ($app) {
+    $app->get('/');
+    $app->post('/');
+    $app->put('/:id');
+    $app->delete('/:id');
+});
+
+$app->group('/formateur', function() use ($app) {
+    $app->get('/');
+    $app->post('/');
+    $app->put('/:id');
+    $app->delete('/:id');
+});
+
+$app->group('/session', function() use ($app) {
+    $app->get('/');
+    $app->post('/');
+    $app->put('/:id');
+    $app->delete('/:id');
 });
 
 
