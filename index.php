@@ -12,6 +12,8 @@ $app = new \Slim\Slim(array(
     'debug' => true
 ));
 
+
+
 $app->get('/formation','\controllers\formationCtrl:findAllFormation');
 $app->get('/formation/:id', '\controllers\formationCtrl:findOneFormation');
 $app->post('/formation','\controllers\formationCtrl:createFormation');
