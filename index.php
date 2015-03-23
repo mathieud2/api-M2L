@@ -7,7 +7,7 @@ require 'vendor/autoload.php';
 use RedBean_Facade as r;
 
 // création de la relation base de donnée
-r::setup('mysql:host=localhost; dbname=nom de la base', 'root', 'root');
+r::setup('mysql:host=localhost; dbname=formationMrbs', 'root', 'root');
 r::freeze(true);
 
 
@@ -79,6 +79,27 @@ $app->group('/formation', function() use ($app) {
 });
 
 $app->group('/formateur', function() use ($app) {
+    $app->get('/');
+    $app->post('/');
+    $app->put('/:id');
+    $app->delete('/:id');
+});
+
+$app->group('/competences', function() use ($app) {
+    $app->get('/');
+    $app->post('/');
+    $app->put('/:id');
+    $app->delete('/:id');
+});
+
+$app->group('/ville', function() use ($app) {
+    $app->get('/');
+    $app->post('/');
+    $app->put('/:id');
+    $app->delete('/:id');
+});
+
+$app->group('/niveau', function() use ($app) {
     $app->get('/');
     $app->post('/');
     $app->put('/:id');
